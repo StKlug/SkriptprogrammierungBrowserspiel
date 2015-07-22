@@ -65,21 +65,11 @@ class Board
 
     private function hasFourInADiagonal($player)
     {
-        /*
-         * TODO zwei Methoden:
-         * 1) von oben links nach unten rechts pruefen
-         * 2) von oben rechts nach unten links pruefen
-         */
         return $this->hasFourInLRDiagonal($player) || $this->hasFourInRLDiagonal($player);
     }
 
     private function hasFourInLRDiagonal($player)
     {
-        /*
-         * TODO
-         * 1) immer Reihe 0, Spalte von COLUMN_COUNT - 4 bis 0 herunterzaehlen
-         * 2) immer Spalte 0, Reihe von 1 bis ROW_COUNT - 1 hochzaehlen
-         */
         for ($startColumn = 0; $startColumn < Board::COLUMN_COUNT - 3; $startColumn++) {
             $counter = 0;
             for ($row = 0; $row < Board::ROW_COUNT && $startColumn + $row < Board::COLUMN_COUNT; $row++) {
@@ -111,11 +101,6 @@ class Board
 
     private function hasFourInRLDiagonal($player)
     {
-        /*
-         * TODO
-         * 1) immer Reihe 0, Spalte von 3 bis COLUMN_COUNT hochzaehlen
-         * 2) immer Spalte COLUMN_COUNT - 1, Reihe von 1 bis ROW_COUNT - 1 hochzaehlen
-         */
         for ($startColumn = 3; $startColumn < Board::COLUMN_COUNT; $startColumn++) {
             $counter = 0;
             for ($row = 0; $row < Board::ROW_COUNT && ($startColumn - $row) >= 0; $row++) {
