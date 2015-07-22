@@ -2,7 +2,7 @@
 	require_once'lib/Database.class.php';
 	require_once 'lib/Template.class.php';
 
-	#$_SESSION['email']='testuser@mail.de';
+	# $_SESSION['email']='testuser@mail.de';
 
 		 $tpl = new Template();
 
