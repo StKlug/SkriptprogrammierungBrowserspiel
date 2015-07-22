@@ -33,6 +33,7 @@
 		$tpl->assign('message', 'Erfolgreich registriert!');
 		$_SESSION['user'] = $username;
 		$_SESSION['email'] = $email;
+		$_SESSION['logged_in'] = true;
 	}
 
 
