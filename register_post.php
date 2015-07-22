@@ -7,7 +7,7 @@
 	$password = $_POST['passwordReg1'];
 	$username = $_POST['usernameReg'];
 
-	$password = password_hash($password, PASSWORD_DEFAULT);
+	$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 	$db = Database::getInstance();
 
@@ -26,7 +26,7 @@
 		$sth = $db->prepare('INSERT INTO user (email, nick, password, points, beschreibung) VALUES (:email, :nick, :password, 0, "")');
 		$sth->bindParam(':email', $email); 
 		$sth->bindParam(':nick', $username);
-		$sth->bindParam(':password', $password);
+		$sth->bindParam(':password', $password_hash);
 
 		$sth->execute();
 
