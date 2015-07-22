@@ -12,11 +12,11 @@
 				<label>Password:</label>
 			</div>
 			<div>
-				<form action="login_post.php">
+				<form id="loginForm" action="login_post.php">
 					<br>
-					<input type="text" name="email">
+					<input type="email" name="email" id="emailLogin">
 					<br>
-					<input type="text" name="password">
+					<input type="password" name="password" id="passwordLogin">
 					<br>
 					<br>
 					<br>
@@ -25,6 +25,7 @@
 					</div>
 				</form>
 			</div>
+			<div id="errorLogin"></div>
 		</div>
 		<div id="Register" style="float: left; width: 350px;">
 			<h2>Register</h2>
@@ -36,22 +37,23 @@
 				<label>Password wiederholen:</label>
 			</div>
 			<div>
-				<form action="register_post.php">
-					<input type="text" name="emailReg">
+				<form id="regForm" action="register_post.php">
+					<input type="email" name="emailReg" id="emailReg">
 					<br>
-					<input type="text" name="username">
+					<input type="text" name="usernameReg" id="usernameReg">
 					<br>
-					<input type="text" name="passwordReg1">
+					<input type="password" name="passwordReg1" id="passwordReg1">
 					<br>
-					<input type="text" name="passwordReg2">
+					<input type="password" name="passwordReg2" id="passwordReg2">
 					<br>
 					<br>
 					<div align="center">
 						<input type="submit" name="regSub">
 					</div>
-					
 				</form>
+				<script src="scripts/regFormCheck.js"></script>
 			</div>
+			<div id="errorReg"></div>	
 		</div>
 		<br style="clear: left;" />
 	</div>
