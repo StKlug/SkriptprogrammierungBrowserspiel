@@ -7,5 +7,5 @@
 	$sth->bindParam(':beschreibung', $_POST['beschreibung']);
 	$sth->execute();
 
-	header('Location: Profil_bearbeiten.php');
+	header('Location: home.php');
 ?>
