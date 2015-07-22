@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	class Template
 	{
 		private static $masterPath ='templates/_master.tpl';
@@ -23,12 +23,24 @@
 			}
 			$master = file_get_contents(Template::$masterPath);
 			
-			//TODO hier was tun, wenn im Master was geändert werden soll
+			//Navbar bauen
 			
+			//TODO besser logged in Checks
+			if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'])
+			{
+				$navbar = '<li data-target="home">Home</li> ';
+				$navbar .='<li data-target="game">Spiel</li> ';
+				$navbar .='<li data-target="profile">Profil bearbeiten</li>';
+				$navbar .='<li data-target="messages">Nachrichten</li> ';
+				$navbar .='<li data-target="logout">Logout</li> ';
+			}
+			else {
+				$navbar = '<li data-target="register">Registrierung</li> ';
+			}
+			
+			$master = str_replace('{$_masterNavbar}', $navbar, $master);
 			$master = str_replace('{$_masterContent}', $template, $master);
 			echo $master;
 		}
 	}
-	
-
 ?>

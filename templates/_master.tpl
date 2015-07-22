@@ -11,8 +11,7 @@
 			Vier Gewinnt!!!
 		</div>
 		<ul id="navbar">
-			<li>Spiel</li>
-			<li>Profil</li>
+			{$_masterNavbar}
 		</ul>
 		<div id="main-content">
 			{$_masterContent}
