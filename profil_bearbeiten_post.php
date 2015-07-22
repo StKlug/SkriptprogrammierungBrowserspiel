@@ -1,4 +1,4 @@
-<?php
+<?php 
 	require_once'lib/Database.class.php';
 	require_once 'lib/Template.class.php';
 
