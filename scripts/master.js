@@ -1,5 +1,5 @@
 
-/*on load event */
+/*on load event*/
 $(function()
 {
 	$('#navbar li').click(
