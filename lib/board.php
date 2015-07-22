@@ -13,10 +13,6 @@ class Board
         for ($i = 0; $i < Board::COLUMN_COUNT; $i++) {
             for ($j = 0; $j < Board::ROW_COUNT; $j++) {
                 $this->field[$i][$j] = 0;
-                /*if($i + $j === 5)
-                {
-                    $this->field[$i][$j] = 1;
-                }*/
             }
         }
     }
