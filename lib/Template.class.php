@@ -2,6 +2,7 @@
 
 	class Template
 	{
+		private static $masterPath ='templates/_master.tpl';
 		private $parameter;
 		
 		public function __construct()
@@ -15,13 +16,17 @@
 		}
 		
 		public function display($templatePath){
-			$file = fopen($templatePath, 'r');
-			$template = fread($file, filesize($templatePath));
-			fclose($file);
+			$template = file_get_contents($templatePath);
+			
 			foreach ($this->parameter as $key => $value) {
 				$template = str_replace('{$'.$key.'}', $value, $template);
 			}
-			echo $template;
+			$master = file_get_contents(Template::$masterPath);
+			
+			//TODO hier was tun, wenn im Master was geändert werden soll
+			
+			$master = str_replace('{$_masterContent}', $template, $master);
+			echo $master;
 		}
 	}
 	
