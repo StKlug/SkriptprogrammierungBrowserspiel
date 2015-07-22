@@ -25,7 +25,6 @@
 			
 			//Navbar bauen
 			
-			//TODO besser logged in Checks
 			if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'])
 			{
 				$navbar = '<li data-target="home">Home</li> ';

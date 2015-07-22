@@ -54,3 +54,26 @@ article header
 	font-size:larger;
 	font-style: bold;
 }
+
+/* Das Spielbrett*/
+#board
+{
+	background-color:  #0000FF;
+	width: 560px;
+	vertical-align: center;
+	margin-left: -50%;
+	margin:auto;
+}
+
+#board tbody tr td{
+	height: 80px;
+	background-image: url(../images/empty.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#board tbody tr td.yellow{
+	background-image: url(../images/yellow.png);
+}
+#board tbody tr td.red{
+	background-image: url(../images/red.png);
+}
