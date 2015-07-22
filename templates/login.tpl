@@ -14,9 +14,9 @@
 			<div>
 				<form id="loginForm" action="login_post.php">
 					<br>
-					<input type="email" name="email">
+					<input type="email" name="email" id="emailLogin">
 					<br>
-					<input type="password" name="password">
+					<input type="password" name="password" id="passwordLogin">
 					<br>
 					<br>
 					<br>
@@ -25,6 +25,7 @@
 					</div>
 				</form>
 			</div>
+			<div id="errorLogin"></div>
 		</div>
 		<div id="Register" style="float: left; width: 350px;">
 			<h2>Register</h2>

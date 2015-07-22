@@ -1,12 +1,21 @@
-$('#form').submit(function () {
-	if($('#pw').val() === "" || $('#user').value() === "")
+$('#loginForm').submit(function(){
+	if($('#emailLogin').val() === "")
 	{
-		$('#output').text("UserName oder Passwort leer gelassen!");
+		$('#errorLogin').text("Bitte geben sie eine Email ein!");
+		$('#emailLogin').css('background-color', '#FF4040');
+		$('#passwordLogin').css('background-color', '#FFFFFF');
+
 		return false;
 	}
-     
-});
+	else if($('#passwordLogin').val() === "")
+	{
+		$('#errorLogin').text("Bitte geben sie ein Passwort ein!");
+		$('#emailLogin').css('background-color', '#FFFFFF');
+		$('#passwordLogin').css('background-color', '#FF4040');
 
+		return false;
+	}
+});
 
 $('#regForm').submit(function(){
 	if(!($('#passwordReg1').val() === $('#passwordReg2').val()))
@@ -48,4 +57,4 @@ $('#regForm').submit(function(){
 		$('#passwordReg2').css('background-color', '#FFFFFF');
 		return false;
 	}
-})
+});
