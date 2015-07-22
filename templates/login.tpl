@@ -1,4 +1,3 @@
-
 	<br>
 	<br>
 	<div style="width: 850px;">
@@ -12,7 +11,7 @@
 				<label>Password:</label>
 			</div>
 			<div>
-				<form id="loginForm" action="login_post.php">
+				<form id="loginForm" method="post" action="login_post.php">
 					<br>
 					<input type="email" name="email" id="emailLogin">
 					<br>
@@ -37,7 +36,7 @@
 				<label>Password wiederholen:</label>
 			</div>
 			<div>
-				<form id="regForm" action="register_post.php">
+				<form id="regForm" method="post" action="register_post.php">
 					<input type="email" name="emailReg" id="emailReg">
 					<br>
 					<input type="text" name="usernameReg" id="usernameReg">

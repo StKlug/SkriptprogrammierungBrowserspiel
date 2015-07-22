@@ -11,12 +11,19 @@ $(function()
 				return false;
 			}
 			switch(target){
+				case "home":
+					window.location.href= "home.php";
 				case "game":
 					window.location.href= "game.php";
 					break;
 				case "profile":
+<<<<<<< .mine
 					window.location.href=	"profile.php";
 					break;
+=======
+					window.location.href="Profil_bearbeiten.php";
+
+>>>>>>> .theirs
 				case "login":
 					window.location.href="login.php";
 					break;

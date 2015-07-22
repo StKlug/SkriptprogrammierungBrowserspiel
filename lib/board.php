@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Die Instanzen dieser Klasse repräsentieren einen kompletten Spielstand des Vier-Gewinnt-Spiels.
+ * Das Board besteht hauptsächlich aus einem Feld mit 6 Zeilen und 7 Spalten.
+ * Das Feld oben links hat die Inidzes (0, 0), unten rechts (6, 5).
+ * Mit der Methode hasWon($player) kann überprüft werden, ob ein Spieler (mit einem Identifier ungleich 0) gewonnen hat.
+ * Ein Zug wird mit drop($column) gemacht, wobei $column die Spalte angibt, in die der Spieler mit dem Identifier
+ * $player (ungleich 0) seinen Spielstein wirft. Diese Methode gibt true zurück, wenn der Spielstein eingefügt wurde
+ * und false, wenn die Spalte $column schon voll ist.
+ */
 class Board
 {
     public $field;
@@ -17,6 +26,20 @@ class Board
         }
     }
 
+    public function drop($player, $column)
+    {
+        if ($column < 0 || $column >= Board::COLUMN_COUNT) {
+            return false;
+        }
+        for ($row = Board::ROW_COUNT - 1; $row >= 0; $row--) {
+            if ($this->field[$column][$row] === 0) {
+                $this->field[$column][$row] = $player;
+                return true;
+            }
+        }
+        return false;
+    }
+
     public function get($column, $row)
     {
         return $this->field[$column][$row];
@@ -25,6 +48,25 @@ class Board
     public function hasWon($player)
     {
         return $this->hasFourInARow($player) || $this->hasFourInAColumn($player) || $this->hasFourInADiagonal($player);
+    }
+
+    public function isFull()
+    {
+        for($i = 0; $i<Board::COLUMN_COUNT; $i++)
+        {
+            for($j = 0; $j<Board::ROW_COUNT; $j++)
+            {
+                if($this->field[$i][$j] === 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public function toJSON()
+    {
+        return json_encode($this->field);
     }
 
     private function hasFourInARow($player)
@@ -132,6 +174,6 @@ class Board
 }
 
 $board = new Board();
-print_r($board->field);
-echo '<br>';
-echo $board->hasWon(1);
+$board->drop(1, 0);
+
+echo json_encode($board->field);
