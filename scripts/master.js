@@ -15,8 +15,8 @@ $(function()
 					window.location.href= "game.php";
 				case "profile":
 					window.location.href="profile.php";
-				case "register":
-					window.location.href="register.php";
+				case "login":
+					window.location.href="login.php";
 				default:
 			}
 		}

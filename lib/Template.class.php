@@ -35,7 +35,7 @@
 				$navbar .='<li data-target="logout">Logout</li> ';
 			}
 			else {
-				$navbar = '<li data-target="register">Registrierung</li> ';
+				$navbar = '<li data-target="login">Anmelden</li> ';
 			}
 			
 			$master = str_replace('{$_masterNavbar}', $navbar, $master);

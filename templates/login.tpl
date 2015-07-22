@@ -1,4 +1,4 @@
-<login>
+
 	<br>
 	<br>
 	<div style="width: 850px;">
@@ -55,4 +55,3 @@
 		</div>
 		<br style="clear: left;" />
 	</div>
-</login>
