@@ -13,10 +13,16 @@ $(function()
 			switch(target){
 				case "game":
 					window.location.href= "game.php";
+					break;
 				case "profile":
-					window.location.href="profile.php";
+					window.location.href=	"profile.php";
+					break;
 				case "login":
 					window.location.href="login.php";
+					break;
+				case "logout":
+					window.location.href ="logout.php";
+					break;
 				default:
 			}
 		}
