@@ -1,0 +1,41 @@
+*
+{
+	margin:0px;	
+	padding:0px;
+}
+#main-content
+{
+	margin-left:150px;
+	margin-right:150px;
+	min-height: 500px;
+	background-color: lightgrey;
+}
+#navbar
+{
+	width:146px;
+	display:block;
+	float:left;
+}
+	#navbar li
+	{
+		font-size:larger;
+		display: block;
+		margin:2px;
+		background-color:#0000FF;
+		width:100%;
+		text-align: center;
+	}
+	#navbar li:hover{
+		
+		background-color:#FF0000;
+	}
+	
+#banner
+{
+	font-family:Courier;
+	font-size: 64px;
+	padding-top:20px;
+	background-color: #0000FF;
+	text-align:center;
+	min-height: 100px;
+}

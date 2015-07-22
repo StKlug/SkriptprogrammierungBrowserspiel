@@ -1,0 +1,6 @@
+
+/*on load event */
+$(function()
+{
+	
+});
