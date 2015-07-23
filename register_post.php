@@ -7,6 +7,9 @@
 	$password = $_POST['passwordReg1'];
 	$username = $_POST['usernameReg'];
 
+	$email = htmlspecialchars($email);
+	$username = htmlspecialchars($username);
+
 	$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 	$db = Database::getInstance();

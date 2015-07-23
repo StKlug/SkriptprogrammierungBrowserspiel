@@ -3,7 +3,7 @@
 	class Database
 	{
 		private static $instance;
-		private static $con = 'mysql:dbname=viergewinnt;host=87.106.30.154';
+		private static $con = 'mysql:dbname=viergewinnt;host=localhost';
 		private static $usr = 'viergewinnt';
 		private static $pw = 'skriptprog1234';
 	

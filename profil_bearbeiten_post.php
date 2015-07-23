@@ -4,7 +4,8 @@
 
 	$dbh = Database::getInstance();
 	$sth = $dbh->prepare("UPDATE user SET beschreibung = :beschreibung WHERE email = '" . $_SESSION['email'] . "'");
-	$sth->bindParam(':beschreibung', $_POST['beschreibung']);
+	$beschreibung = htmlspecialchars($_POST['beschreibung']);
+	$sth->bindParam(':beschreibung', $beschreibung);
 	$sth->execute();
 
 	header('Location: home.php');
