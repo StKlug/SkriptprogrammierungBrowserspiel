@@ -10,7 +10,7 @@ $action = isset($_POST['action']) ? $_POST['action'] : '';
 const HUMAN_PLAYER = 1;
 const AI = 2;
 
-$debugInfo = "  ";
+$debugInfo = "";
 
 if($action === 'newGame'){
     $_SESSION['expect_turn'] = 'false';
@@ -43,6 +43,7 @@ else if($action === 'turn'){
                 $debugInfo = $debugInfo . "erfolgreicher Zug der AI; ";
                 if($board->hasWon(AI)){
                     // TODO Verloren-Nachricht
+                    $debugInfo = $debugInfo . "AI hat gewonnen; ";
                 }
                 $_SESSION['board'] = serialize($board);
                 $_SESSION['expect_turn'] = 'true';
@@ -54,5 +55,9 @@ else if($action === 'turn'){
 }
 
 if(isset($_SESSION['board'])){
-    echo unserialize($_SESSION['board'])->toJSON() . $debugInfo;
+
+    $array = array();
+    $array["board"] = unserialize($_SESSION['board'])->toJSON();
+    $array["action"] = $debugInfo;
+    echo json_encode($array);
 }
