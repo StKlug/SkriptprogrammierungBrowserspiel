@@ -4,7 +4,7 @@
 
 	#$_SESSION['loggedIn']=true;
 	#$_SESSION['email']='testuser@mail.de';
-	if ($_SESSION['loggedIn']) {
+	if ($_SESSION['loggedIn']){
 		$tpl = new Template();
 
 		$dbh = Database::getInstance();
