@@ -10,7 +10,7 @@ $action = isset($_POST['action']) ? $_POST['action'] : '';
 const HUMAN_PLAYER = 1;
 const AI = 2;
 
-$debugInfo = " ";
+$debugInfo = "  ";
 
 if($action === 'newGame'){
     $_SESSION['expect_turn'] = 'false';
