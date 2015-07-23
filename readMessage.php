@@ -8,21 +8,23 @@
 	$tpl = new Template();
 
 	if ($_SESSION['logged_in'] == 'true'){
-		$dbh = Database::getInstance();
+		$db = Database::getInstance();
 
-		$query = $dbh->prepare("SELECT senderEmail, message From message WHERE receiverEmail = :email");
-		$query->bindParam(':email', $_POST["email"]);
-		$query->execute();
-		$row = $query->fetchAll(PDO::FETCH_ASSOC);
-		for ($i = 0; $i < count($row); $i++) {
-		    $senderEmail[$i] = $row[$i]['senderEmail'];
-		    $message[$i] = $row[$i]['message'];
+		$sth = $db->prepare("SELECT * From message WHERE receiverEmail = :email");
+		$sth->bindParam('email', $_SESSION['email']);
+		$sth->execute();
+
+		$resultset = $sth->fetchAll();
+
+		$table = '<table border rules=all><tr><th>Von:</th><th>Nachricht</th><th>Sededatum</th><th>Antworten</th></tr>';
+		foreach ($resultset as $row) {
+			$currentEmail = $row['senderEmail'];
+			$table = $table.'<tr><td width="20%">' . $row['senderEmail'] . '</td><td>' . $row['message'] . '</td><td width="20%">' . $row['send'] . '</td><td><div align="center"><a href="sendMessage.php?page='. $currentEmail .'"><img src="images/answer.png"></a></div></td></tr>';
 		}
-		$query->closeCursor();
 
-		$tpl->assign('senderEmail', $senderEmail);
-		$tpl->assign('message', $message);
+		$table = $table . '</table>';
 
+		$tpl->assign('message', $table);
 		$tpl->display('templates/readMessage.tpl');
 	} 
 	else{
