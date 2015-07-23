@@ -28,12 +28,12 @@
 		}
 		else
 		{
-			$tpl->assign('message', 'Email oder Passwort sind falsch!<br>Versuchen sie es <a href="../login.php">hier</a> erneut!');
+			$tpl->assign('message', 'Email oder Passwort sind falsch!<br>Versuchen sie es <a href="login.php">hier</a> erneut!');
 		}
 	}
 	else //email is not in database
 	{
-		$tpl->assign('message', 'Email oder Passwort sind falsch!<br>Versuchen sie es <a href="../login.php">hier</a> erneut!');
+		$tpl->assign('message', 'Email oder Passwort sind falsch!<br>Versuchen sie es <a href="login.php">hier</a> erneut!');
 	}
 
 	$tpl->display('templates/register_post.tpl');

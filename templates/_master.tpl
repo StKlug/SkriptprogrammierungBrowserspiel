@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta charset="UTF-8" />
 <html>
 	<head>
 		<title>Vier gewinnt!</title>
