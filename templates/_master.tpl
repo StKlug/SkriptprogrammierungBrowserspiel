@@ -6,7 +6,8 @@
 		<title>Vier gewinnt!</title>
 		<link rel="stylesheet" href="styles/main.css" />
 		<script src="scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
-		<script src="scripts/master.js" type="text/javascript"></script> 
+		<script src="scripts/NoIframe.js" type="text/javascript"></script>
+		<script src="scripts/master.js" type="text/javascript"></script>
 		</head>
 	<body>
 		<div id="banner">
@@ -19,7 +20,7 @@
 			{$_masterContent}
 		</div>
 		<footer>
-			Skriptprogrammierung Blockkurs
+			Gruppe 2
 		</footer>
 	</body>
 </html>

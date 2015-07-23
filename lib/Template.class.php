@@ -30,12 +30,15 @@
 				$navbar = '<li data-target="home">Home</li> ';
 				$navbar .='<li data-target="game">Spiel</li> ';
 				$navbar .='<li data-target="profile">Profil bearbeiten</li>';
+				$navbar .='<li data-target="scores">Bestenliste</li> ';
 				$navbar .='<li data-target="messages">Nachrichten</li> ';
 				$navbar .='<li data-target="logout">Logout</li> ';
 			}
 			else {
 				$navbar = '<li data-target="login">Anmelden</li> ';
+				$navbar .='<li data-target="scores">Bestenliste</li> ';
 			}
+
 			
 			$master = str_replace('{$_masterNavbar}', $navbar, $master);
 			$master = str_replace('{$_masterContent}', $template, $master);

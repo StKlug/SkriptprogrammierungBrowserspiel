@@ -1,3 +1,3 @@
 <?php
-echo json_encode("success");
-?>
+echo json_encode(isset($_POST['x']));
+?>}
