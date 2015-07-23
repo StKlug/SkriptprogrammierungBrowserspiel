@@ -3,8 +3,8 @@
 	require_once 'lib/Template.class.php';
 
 	#$_SESSION['email']='testuser@mail.de';
-
-		 $tpl = new Template();
+	if ($_SESSION['loggedIn']){
+		$tpl = new Template();
 
 		$dbh = Database::getInstance();
 
@@ -24,4 +24,7 @@
 		 $tpl->assign('beschr', $beschr);
 
 		 $tpl->display('templates/profil_bearbeiten.tpl');
+	} else {
+    	header('location: login.php');
+	}
 ?>

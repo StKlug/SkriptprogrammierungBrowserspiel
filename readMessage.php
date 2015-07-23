@@ -19,7 +19,7 @@
 		$table = '<table border rules=all><tr><th>Von:</th><th>Nachricht</th><th>Sededatum</th><th>Antworten</th></tr>';
 		foreach ($resultset as $row) {
 			$currentEmail = $row['senderEmail'];
-			$table = $table.'<tr><td width="20%">' . $row['senderEmail'] . '</td><td>' . $row['message'] . '</td><td width="20%">' . $row['send'] . '</td><td><div align="center"><a href="sendMessage.php?page='. $currentEmail .'"><img src="images/answer.png"></a></div></td></tr>';
+			$table = $table.'<tr><td width="20%">' . $row['senderEmail'] . '</td><td>' . $row['message'] . '</td><td width="20%">' . $row['send'] . '</td><td><div align="center"><a href="sendMessage.php?mail='. $currentEmail .'"><img src="images/answer.png"></a></div></td></tr>';
 		}
 
 		$table = $table . '</table>';
