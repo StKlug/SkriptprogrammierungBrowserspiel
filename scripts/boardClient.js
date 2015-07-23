@@ -52,8 +52,10 @@ $(function()
    		})
    		.done(function(responseData)
    		{
+   			var jResponse = JSON.parse(responseData);
+   			jResponse.board = eval(jResponse.board);
+   			fillBoard(jResponse.board);
    			myTurn = true;
-            console.log(responseData);
    		});
    		
 		/*
@@ -82,7 +84,7 @@ function newGame()
 	$('#board tbody tr td').removeClass("yellow red");
 	
 }
-function fillBoard(values)
+function fillBoard(myval)
 {
 	for(var y = 0; y <6;y++)
 	{
@@ -90,11 +92,11 @@ function fillBoard(values)
 		{
 			var element = $('#board tbody tr td[data-x= "'+x+'"][data-y="'+ y+ '"]');
 			element.removeClass("yellow","red");
-			if(values[x][y] === 1)
+			if(myval[x][y] === 1)
 			{
 				element.addClass("yellow");
 			}
-			 else if(values[x][y] === 2)
+			 else if(myval[x][y] === 2)
 			{
 				element.addClass("red");
 			}
@@ -105,5 +107,5 @@ function fillBoard(values)
 function win(){
 	$('#board').hide();
 	var winMsg = $('<div class=".win">Sie haben gewonnen!</div>');
-	$("main-content").append(winMsg)s;
+	$("main-content").append(winMsg);
 }
