@@ -172,8 +172,3 @@ class Board
         return false;
     }
 }
-
-$board = new Board();
-$board->drop(1, 0);
-
-echo json_encode($board->field);
