@@ -8,7 +8,9 @@
 
 		$dbh = Database::getInstance();
 
-		$query = $dbh->query("SELECT nick,points,beschreibung From user WHERE email = '" . $_SESSION['email'] . "'");
+		$query = $dbh->prepare("SELECT nick,points,beschreibung From user WHERE email = :mail");
+		$mail = htmlspecialchars($_SESSION['email']);
+		$query->bindParam(':mail', $mail);
 		$query->execute();
 		$row = $query->fetch();
 		$name = $row['nick'];
