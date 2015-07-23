@@ -6,7 +6,7 @@
  * Das Feld oben links hat die Inidzes (0, 0), unten rechts (6, 5).
  * Mit der Methode hasWon($player) kann überprüft werden, ob ein Spieler (mit einem Identifier ungleich 0) gewonnen hat.
  * Ein Zug wird mit drop($column) gemacht, wobei $column die Spalte angibt, in die der Spieler mit dem Identifier
- * $player (ungleich 0) seinen Spielstein wirft. Diese Methode gibt true zurück, wenn der Spielstein eingefügt wurde
+ * $player (ungleich 0) seinen Spielstein wirft. Diese Methode gibt true zurück, wenn der Spielstein eingefuegt wurde
  * und false, wenn die Spalte $column schon voll ist.
  */
 class Board
@@ -172,8 +172,3 @@ class Board
         return false;
     }
 }
-
-$board = new Board();
-$board->drop(1, 0);
-
-echo json_encode($board->field);

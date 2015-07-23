@@ -1,8 +1,14 @@
 <?php
 
-class RandomAI extends AI
+require_once("Board.php");
+
+class RandomAI
 {
-    function move($board){
-        return rand(0, Board::COLUMN_COUNT-1);
+    public static function move($board, $player)
+    {
+        do {
+            $column = rand(0, Board::COLUMN_COUNT - 1);
+        } while (!$board->drop($player, $column));
+        return true;
     }
 }

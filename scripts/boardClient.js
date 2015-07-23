@@ -19,7 +19,9 @@ $(function()
 	{
 		$('#board').show();
 		newGame();
-		$.post('game_post.php',{'action':'newGame'}).done();
+		$.post('game_post.php',{'action':'newGame'}).done(function(responseData){
+            console.log(responseData);
+        });
 	});
 	
 	$('#board tbody tr td').click(function ()
@@ -51,6 +53,7 @@ $(function()
    		.done(function(responseData)
    		{
    			myTurn = true;
+            console.log(responseData);
    		});
    		
 		/*
