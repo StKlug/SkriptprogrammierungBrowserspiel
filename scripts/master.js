@@ -17,13 +17,10 @@ $(function()
 					window.location.href= "game.php";
 					break;
 				case "profile":
-<<<<<<< .mine
 					window.location.href=	"profile.php";
 					break;
-=======
+				case "profile":
 					window.location.href="Profil_bearbeiten.php";
-
->>>>>>> .theirs
 				case "login":
 					window.location.href="login.php";
 					break;
