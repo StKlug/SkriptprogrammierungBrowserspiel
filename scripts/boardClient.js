@@ -79,3 +79,22 @@ function newGame()
 	$('#board tbody tr td').removeClass("yellow red");
 	
 }
+function fillBoard(values)
+{
+	for(var y = 0; y <6;y++)
+	{
+		for (var x = 0; x <7; x++)
+		{
+			var element = $('#board tbody tr td[data-x= "'+x+'"][data-y="'+ y+ '"]');
+			element.removeClass("yellow","red");
+			if(values[x][y] === 1)
+			{
+				element.addClass("yellow");
+			}
+			 else if(values[x][y] === 2)
+			{
+				element.addClass("red");
+			}
+		}
+}
+}

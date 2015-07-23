@@ -13,6 +13,8 @@ $(function()
 			switch(target){
 				case "home":
 					window.location.href= "home.php";
+					break;
+						
 				case "game":
 					window.location.href= "game.php";
 					break;
@@ -25,11 +27,11 @@ $(function()
 				case "logout":
 					window.location.href ="logout.php";
 					break;
-				case "messages":
+				case "message":
 					window.location.href="readMessage.php";
 					break;
 				case "scores":
-					window.location.href="readMessage.php";
+					window.location.href="scores.php";
 					break;
 				default:
 			}
