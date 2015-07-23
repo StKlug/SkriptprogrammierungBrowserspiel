@@ -2,6 +2,9 @@
 
 	require_once'lib/Database.class.php';
 	require_once 'lib/Template.class.php';
+
+	if ($_SESSION['loggedIn']) {
+		
 	if(isset(($_GET['send'])))
 	{
 		header('Location: sendMessage.php ');
@@ -27,5 +30,9 @@
 		 $tpl->assign('beschr', $beschr);
 
 		 $tpl->display('templates/profil.tpl');
+	}
+
+	} else {
+    	header('location: login.php');
 	}
 ?>
