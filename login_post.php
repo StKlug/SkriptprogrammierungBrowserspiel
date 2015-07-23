@@ -31,7 +31,7 @@
 			$tpl->assign('message', 'Email oder Passwort sind falsch!<br>Versuchen sie es <a href="../login.php">hier</a> erneut!');
 		}
 	}
-	else //email ist nicht in database
+	else //email is not in database
 	{
 		$tpl->assign('message', 'Email oder Passwort sind falsch!<br>Versuchen sie es <a href="../login.php">hier</a> erneut!');
 	}
