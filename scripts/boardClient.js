@@ -99,5 +99,11 @@ function fillBoard(values)
 				element.addClass("red");
 			}
 		}
+	}
 }
+
+function win(){
+	$('#board').hide();
+	var winMsg = $('<div class=".win">Sie haben gewonnen!</div>');
+	$("main-content").append(winMsg)s;
 }
