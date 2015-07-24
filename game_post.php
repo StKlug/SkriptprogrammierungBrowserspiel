@@ -32,11 +32,19 @@ if ($action === 'newGame') {
             if ($board->hasWon(HUMAN_PLAYER)) {
                 $cancel = true;
                 $message = "WON";
+                $_SESSION['expect_turn'] = 'false';
+                // beim Sieg wird die Punktezahl in der Datenbank erhoeht
+                $db = Database::getInstance();
+                $sth = $db->prepare('UPDATE user SET points = points + 1 WHERE email = :email;');
+                $email = $_SESSION['email'];
+                $sth->bindParam(':email', $email);
+                $sth->execute();
             }
             if ($cancel !== true) {
                 if ($board->isFull() === true) {
                     $cancel = true;
                     $message = "TIE";
+                    $_SESSION['expect_turn'] = 'false';
                 }
                 if ($cancel !== true) {
                     if ($successfulMove === true) {
@@ -45,6 +53,7 @@ if ($action === 'newGame') {
                     if ($successfulMove === true) {
                         if ($board->hasWon(AI)) {
                             $message = "LOST";
+                            $_SESSION['expect_turn'] = 'false';
                         }
                     }
                 }
@@ -58,7 +67,6 @@ if ($action === 'newGame') {
 }
 
 if (isset($_SESSION['board'])) {
-
     $array = array();
     $array["board"] = unserialize($_SESSION['board'])->toJSON();
     $array["message"] = $message;
