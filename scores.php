@@ -42,7 +42,7 @@
 	$pagecounter = 0;
 	foreach ($resultset as $row) {
 		if($page*10-10+$pagecounter == $counter){
-			$table = $table.'<tr><td width="80%">' . $row['nick'] . '</td><td>' . $row['points'] . '</td></tr>';
+			$table = $table.'<tr><td width="80%"><a href="profil.php?email=' . $row['email'] . '">' . $row['nick'] . '</a></td><td>' . $row['points'] . '</td></tr>';
 			if($pagecounter < 9){
 				$pagecounter++;
 			}
