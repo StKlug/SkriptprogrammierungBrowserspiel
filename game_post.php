@@ -2,8 +2,8 @@
 
 session_start();
 
-require_once("lib/Board.php");
-require_once("lib/RandomAI.php");
+require_once "lib/Board.php";
+require_once "lib/RandomAI.php";
 
 const HUMAN_PLAYER = 1;
 const AI = 2;

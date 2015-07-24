@@ -19,7 +19,8 @@ $(function()
 	{
 		$('#board').show();
 		newGame();
-		$.post('game_post.php',{'action':'newGame'}).done(function(responseData){
+		$.post('game_post.php',{'action':'newGame'})
+		.done(function(responseData){
             console.log(responseData);
             myTurn= true;
         });
@@ -76,25 +77,6 @@ $(function()
    				myTurn = true;
    			}
    		});
-   		
-		/*
-		$.ajax({
-    data: JSON.stringify({
-        'x': $(this).data("x"),
-        'y': $(this).data("y")
-   		}),
-    success: function(data){
-		myTurn = true;
-    },
-    error: function(e){
-    	console.log(e);
-    	alert("FAIL");
-    },
-    type: 'POST',
-    url: 'game_post.php',
-    timeout: 2000
-});*/
-		
 	});
 });
 function newGame()
