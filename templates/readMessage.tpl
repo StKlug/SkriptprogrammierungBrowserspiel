@@ -8,19 +8,21 @@
 	{$message}
 	
 	<script type="text/javascript">
-		$( "td div img" ).click(function(){
-			alert($(this).data("email"));
-
+		/*$( "td div img" ).click(function(){
 			$.ajax({
 				type: "POST",
 				url: "updateReceiver.php",
 				data: { 'email': $(this).data("email") },
 				cache: false,
-				uccess: function()
+				success: function()
 				{
 					alert("Order Submitted");
+				},
+				error: function()
+				{
+					alert("error");
 				}
-			});
+			});*/
 			window.location.href = "sendMessage.php";
 		});
 	</script>
