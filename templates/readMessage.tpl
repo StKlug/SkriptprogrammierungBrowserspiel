@@ -6,4 +6,22 @@
 	<br>
 	<br>
 	{$message}
+	
+	<script type="text/javascript">
+		$( "td div img" ).click(function(){
+			alert($(this).data("email"));
+
+			$.ajax({
+				type: "POST",
+				url: "updateReceiver.php",
+				data: { 'email': $(this).data("email") },
+				cache: false,
+				uccess: function()
+				{
+					alert("Order Submitted");
+				}
+			});
+			window.location.href = "sendMessage.php";
+		});
+	</script>
 </div>
