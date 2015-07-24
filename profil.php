@@ -16,8 +16,8 @@
 		$dbh = Database::getInstance();
 
 		$query = $dbh->prepare("SELECT nick,points,beschreibung From user WHERE email = :mail");
-		$mail = htmlspecialchars($_POST['email']);
-		$_SESSION['sendEmail'] =$_POST['email'];
+		$mail = htmlspecialchars($_GET['email']);
+		$_SESSION['sendEmail'] =$_GET['email'];
 		$query->bindParam(':mail', $mail);
 		$query->execute();
 		$row = $query->fetch();
