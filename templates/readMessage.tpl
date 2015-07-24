@@ -8,8 +8,8 @@
 	{$message}
 	
 	<script type="text/javascript">
-		/*$( "td div img" ).click(function(){
-			$.ajax({
+		$( "td div img" ).click(function(){
+			/*$.ajax({
 				type: "POST",
 				url: "updateReceiver.php",
 				data: { 'email': $(this).data("email") },

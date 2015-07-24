@@ -35,14 +35,14 @@
 		}
 	}
 
-	$table = 'Seite '. $page .'<br><br><table style="border: 1px solid black;"><tr><th>User</th><th>Points</th></tr>';
+	$table = 'Seite '. $page .'<br><br><table border rules=all"><tr><th>User</th><th>Points</th></tr>';
 
 	$resultset = $db->query("SELECT * FROM user ORDER BY points DESC");
 	$counter = 0;
 	$pagecounter = 0;
 	foreach ($resultset as $row) {
 		if($page*10-10+$pagecounter == $counter){
-			$table = $table.'<tr><td>' . $row['nick'] . '</td><td>' . $row['points'] . '</td></tr>';
+			$table = $table.'<tr><td width="80%">' . $row['nick'] . '</td><td>' . $row['points'] . '</td></tr>';
 			if($pagecounter < 9){
 				$pagecounter++;
 			}
