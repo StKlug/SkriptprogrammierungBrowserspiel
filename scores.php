@@ -54,7 +54,7 @@
 	
 	if($page != 1){ //Nach links
 		$page--;
-		$table = $table . '<a href="scores.php?page='. $page .'"><img style="float: left; margin-left: 30px;" src="/images/goleft.png"></a>';
+		$table = $table . '<a href="scores.php?page='. $page .'"><img style="float: left; margin-left: 30px;" src="images/goleft.png"></a>';
 		$page++;
 	}
 	if($pagecount > $page){ //Nach rechts

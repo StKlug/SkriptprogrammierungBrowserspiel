@@ -27,7 +27,7 @@ if ($action === 'newGame') {
         if (isset($column) && $column !== false) {
             $cancel = false;
             $successfulMove = $board->drop(HUMAN_PLAYER, $column);
-            if($successfulMove === false){
+            if ($successfulMove === false) {
                 $message = "ILLEGAL_MOVE";
             }
             if ($board->hasWon(HUMAN_PLAYER)) {
@@ -35,11 +35,13 @@ if ($action === 'newGame') {
                 $message = "WON";
                 $_SESSION['expect_turn'] = 'false';
                 // beim Sieg wird die Punktezahl in der Datenbank erhoeht
-                $db = Database::getInstance();
-                $sth = $db->prepare('UPDATE user SET points = points + 1 WHERE email = :email;');
-                $email = $_SESSION['email'];
-                $sth->bindParam(':email', $email);
-                $sth->execute();
+                if (isset($_SESSION['email'])) {
+                    $db = Database::getInstance();
+                    $sth = $db->prepare('UPDATE user SET points = points + 1 WHERE email = :email;');
+                    $email = $_SESSION['email'];
+                    $sth->bindParam(':email', $email);
+                    $sth->execute();
+                }
             }
             if ($cancel !== true) {
                 if ($board->isFull() === true) {
