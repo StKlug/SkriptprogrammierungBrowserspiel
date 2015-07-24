@@ -1,6 +1,7 @@
 <?php
 	require_once'lib/Database.class.php';
 	require_once 'lib/Template.class.php';
+        $tpl = new Template();
 
 	$message = htmlspecialchars($_POST["message"]);
 	$receiver = htmlspecialchars($_POST["receiver"]);
@@ -14,7 +15,9 @@
     $sth->bindParam(':sender', $sender);
 
     $sth->execute();
-
-    echo 'Message send!' . $sender;
+    
+    $tpl->assign('message', 'Die Nachricht wurde erfolgreich versendet.');
+    
+    $tpl->display('templates/sendMessage_post.tpl');
 ?>
 
