@@ -59,6 +59,11 @@ if ($action === 'newGame') {
                             $_SESSION['expect_turn'] = 'false';
                         }
                     }
+                    else if($board->isFull() === true){
+                        $cancel = true;
+                        $message = "TIE";
+                        $_SESSION['expect_turn'] = 'false';
+                    }
                 }
             }
             $_SESSION['board'] = serialize($board);
