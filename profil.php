@@ -3,9 +3,9 @@
 	require_once'lib/Database.class.php';
 	require_once 'lib/Template.class.php';
 
-	if ($_SESSION['loggedIn']){
+	if ($_SESSION['logged_in'] == 'true'){
 
-	if (isset($_GET['send']))
+	if(isset(($_GET['send'])))
 	{
 		header('Location: sendMessage.php ');
 
