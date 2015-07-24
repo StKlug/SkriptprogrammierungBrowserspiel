@@ -5,13 +5,7 @@
 
 	if ($_SESSION['logged_in'] == 'true'){
 
-	if(isset(($_GET['send'])))
-	{
-		header('Location: sendMessage.php ');
-
-	}else
-	{
-		 $tpl = new Template();
+		$tpl = new Template();
 
 		$dbh = Database::getInstance();
 
@@ -30,7 +24,7 @@
 		 $tpl->assign('beschr', $beschr);
 
 		 $tpl->display('templates/profil.tpl');
-	}
+	
 
 	} else {
     	header('location: login.php');
