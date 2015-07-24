@@ -1,0 +1,53 @@
+/* Das Spielbrett*/
+#board
+{
+	background-color:  #0000FF;
+	width: 560px;
+	margin:auto;
+	border-radius: 0px 0px 10px 10px;
+-moz-border-radius: 0px 0px 10px 10px;
+-webkit-border-radius: 0px 0px 10px 10px;
+border: 5px solid #000010;
+border-top:  2px solid #000010
+}
+
+#board tbody tr td{
+	height: 80px;
+	background-image: url(../images/empty.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#board tbody tr td.yellow{
+	background-image: url(../images/yellow.png);
+}
+#board tbody tr td.red{
+	background-image: url(../images/red.png);
+}
+#newGameButton{
+	width:200px;
+	color:white;
+	background-color:#0000FF;
+	text-shadow: 0 -1px #000010, 1px 0 #000010, 0 1px #000010, -1px 0 #000010;
+	border: 1px solid #000010;
+	display: block;
+	margin:auto;
+	margin-bottom: 10px;
+
+	}
+.message{
+	font-size:400%;
+	text-align: center;
+	margin-top:200px;
+	text-shadow: 0 -1px #999999, 1px 0 #999999, 0 1px #999999, -1px 0 #999999;
+}
+.message.win
+	{
+		color:#00FF00;
+	}
+.message.lose
+	{
+		color: #FF0000;
+	}
+	.message.tie{
+		color: #0000FF;
+	}

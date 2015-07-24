@@ -21,6 +21,7 @@ $(function()
 		newGame();
 		$.post('game_post.php',{'action':'newGame'}).done(function(responseData){
             console.log(responseData);
+            myTurn= true;
         });
 	});
 	
@@ -54,8 +55,26 @@ $(function()
    		{
    			var jResponse = JSON.parse(responseData);
    			jResponse.board = eval(jResponse.board);
-   			fillBoard(jResponse.board);
-   			myTurn = true;
+   			console.log(jResponse);
+   			if(jResponse.message === "WON")
+   			{
+   				win();
+   			}
+   			else if(jResponse.message === "LOST")
+   			{
+   				lose();
+   			}else if(jResponse.message === "TIE")
+   			{
+   				tie();
+   			}else if(jResponse.message === "ILLEGAL_MOVE")
+   			{
+   				newGame();
+   			}
+   			else
+   			{
+   				fillBoard(jResponse.board);
+   				myTurn = true;
+   			}
    		});
    		
 		/*
@@ -80,7 +99,7 @@ $(function()
 });
 function newGame()
 {
-	
+	$('#main-content div.message').remove();
 	$('#board tbody tr td').removeClass("yellow red");
 	
 }
@@ -105,7 +124,29 @@ function fillBoard(myval)
 }
 
 function win(){
-	$('#board').hide();
-	var winMsg = $('<div class=".win">Sie haben gewonnen!</div>');
-	$("main-content").append(winMsg);
+	var winMsg = $('<div class="message win">Gewonnen!</div>');
+	winMsg.hide();	
+	$("#main-content").append(winMsg);
+	
+	$('#board').fadeOut();
+	winMsg.fadeIn();
+}
+function lose()
+{
+	var winMsg = $('<div class="message lose">Verloren!</div>');
+	winMsg.hide();	
+	$("#main-content").append(winMsg);
+	
+	$('#board').fadeOut();
+	winMsg.fadeIn();	
+}
+
+function tie()
+{
+	var winMsg = $('<div class="message">Unentschieden</div>');
+	winMsg.hide();	
+	$("#main-content").append(winMsg);
+	
+	$('#board').fadeOut();
+	winMsg.fadeIn();		
 }

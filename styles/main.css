@@ -7,7 +7,7 @@
 {
 	margin-left:150px;
 	margin-right:150px;
-	min-height: 500px;
+	min-height: 800px;
 	padding:4px;
 	background-color: lightgrey;
 }
@@ -35,12 +35,23 @@
 {
 	font-family:Courier;
 	font-size: 64px;
+	color:white;
 	padding-top:20px;
-	background-color: #0000FF;
 	text-align:center;
+	text-shadow: 0px 1px black,1px 0px black, -1px 0px black, 0px -1px black;
 	min-height: 100px;
+	background: rgba(31,54,229,1);
+	background: -moz-linear-gradient(top, rgba(31,54,229,1) 0%, rgba(31,54,229,1) 47%, rgba(72,99,234,1) 95%, rgba(72,99,234,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(31,54,229,1)), color-stop(47%, rgba(31,54,229,1)), color-stop(95%, rgba(72,99,234,1)), color-stop(100%, rgba(72,99,234,1)));
+	background: -webkit-linear-gradient(top, rgba(31,54,229,1) 0%, rgba(31,54,229,1) 47%, rgba(72,99,234,1) 95%, rgba(72,99,234,1) 100%);
+	background: -o-linear-gradient(top, rgba(31,54,229,1) 0%, rgba(31,54,229,1) 47%, rgba(72,99,234,1) 95%, rgba(72,99,234,1) 100%);
+	background: -ms-linear-gradient(top, rgba(31,54,229,1) 0%, rgba(31,54,229,1) 47%, rgba(72,99,234,1) 95%, rgba(72,99,234,1) 100%);
+	background: linear-gradient(to bottom, rgba(31,54,229,1) 0%, rgba(31,54,229,1) 47%, rgba(72,99,234,1) 95%, rgba(72,99,234,1) 100%);
+	border-bottom: 2px solid #000010;
 }
 footer{
+	margin-left:150px;
+	margin-right:150px;
 	font-size:small;
 	color:lightgrey;
 	text-align: left;
@@ -55,25 +66,3 @@ article header
 	font-style: bold;
 }
 
-/* Das Spielbrett*/
-#board
-{
-	background-color:  #0000FF;
-	width: 560px;
-	vertical-align: center;
-	margin-left: -50%;
-	margin:auto;
-}
-
-#board tbody tr td{
-	height: 80px;
-	background-image: url(../images/empty.png);
-	background-position: center;
-	background-repeat: no-repeat;
-}
-#board tbody tr td.yellow{
-	background-image: url(../images/yellow.png);
-}
-#board tbody tr td.red{
-	background-image: url(../images/red.png);
-}
