@@ -29,7 +29,7 @@
 			{
 				$navbar = '<li data-target="home">Home</li> ';
 				$navbar .='<li data-target="game">Spiel</li> ';
-				$navbar .='<li data-target="profile">Profil bearbeiten</li>';
+				$navbar .='<li data-target="profile">Mein Profil</li>';
 				$navbar .='<li data-target="scores">Bestenliste</li> ';
 				$navbar .='<li data-target="message">Nachrichten</li> ';
 				$navbar .='<li data-target="logout">Logout</li> ';

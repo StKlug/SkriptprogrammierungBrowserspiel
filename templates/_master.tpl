@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="styles/main.css" />
 		<link rel="stylesheet" href="styles/board.css" />
 		<script src="scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
-		<script src="scripts/NoIframe.js" type="text/javascript"></script>
+		<!--<script src="scripts/NoIframe.js" type="text/javascript"></script> -->
 		<script src="scripts/master.js" type="text/javascript"></script>
 		</head>
 	<body>

@@ -5,7 +5,7 @@
 
 	if ($_SESSION['loggedIn']){
 
-	if(isset(($_GET['send'])))
+	if (isset($_GET['send']))
 	{
 		header('Location: sendMessage.php ');
 
